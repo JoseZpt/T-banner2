@@ -1,0 +1,258 @@
+#!/bin/bash
+
+#COLORES
+
+A='\e[1;34m'
+
+r='\e[1;31m'
+
+v='\e[1;32m'
+
+f='\e[1;35m'
+
+b='\e[1;37m'
+
+ac='\e[1;36m'
+
+rosa="\033[38;5;207m"
+
+c1='\033[31m'
+
+verde='\033[32m'
+
+amarillo='\033[33m'
+
+azul='\033[34m'
+
+morado='\033[35m'
+
+blanco='\033[37m'
+
+c2='\033[1;36m'
+
+m='\033[1;35m'
+
+j='sleep 0.5'
+
+#opciones
+
+while :
+
+do
+
+clear
+
+echo
+chmod +x *
+
+echo -e "─────█─▄▀█──█▀▄─█──
+
+────▐▌──────────▐▌──
+
+────█▌▀▄──▄▄──▄▀▐█──
+
+───▐██──▀▀──▀▀──██▌──
+
+──▄████▄──▐▌──▄████▄─${ac}#By Anonymous-Zpt${b}
+
+"
+
+sleep 0.2
+
+echo -e "Que Desea Realizar:"
+
+echo -e "
+
+[1] Comenzar Personalizacion
+
+[2] Eliminar Personalizacion
+
+[3] Contacto Via Whatsapp
+
+[4] Instalar Requisitos
+
+[5] Salir
+
+"
+
+read -p ">>>> " opcion
+
+[ "$opcion" == "1" ]||[ "$opcion" == "2" ]||[ "$opcion" == "3" ]||[ "$opcion" == "4" ]||[ "$opcion" == "5" ]&& break
+
+echo "
+
+Respuesta Incorrecta
+
+    Intente Nuevamente
+
+"
+
+sleep 1
+
+clear
+
+done
+
+case $opcion in
+
+1)
+
+echo -e "
+
+Iniciando Banner Personalizado
+
+"
+
+cd /data/data/com.termux/files/usr/etc
+
+rm -r motd bash.bashrc
+
+touch bash.bashrc
+
+touch motd
+
+echo "cd /data/data/com.termux/files/home/T-banner2;python2 Banner.py" >> bash.bashrc
+
+echo "cd /data/data/com.termux/files/home" >> bash.bashrc
+
+echo "
+
+PS1='\$ '
+
+" >> bash.bashrc
+
+echo -e "
+
+Finalizado
+
+"
+
+;;
+
+2)
+
+echo -e "
+
+Iniciando Banner Defaul
+
+"
+
+cd /data/data/com.termux/files/usr/etc
+
+rm -r motd bash.bashrc
+
+touch motd
+
+touch bash.bashrc
+
+echo " if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
+
+	command_not_found_handle() {		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"
+
+	}
+
+fi
+
+PS1='\$ '
+
+" >> bash.bashrc
+
+echo " 
+
+Welcome to Termux!
+
+Wiki:            https://wiki.termux.com
+
+Community forum: https://termux.com/community
+
+Gitter chat:     https://gitter.im/termux/termux
+
+IRC channel:     #termux on freenode
+
+Working with packages:
+
+ * Search packages:   pkg search <query>
+
+ * Install a package: pkg install <package>
+
+ * Upgrade packages:  pkg upgrade
+
+Subscribing to additional repositories:
+
+ * Root:     pkg install root-repo
+
+ * Unstable: pkg install unstable-repo
+
+ * X11:      pkg install x11-repo
+
+Report issues at https://termux.com/issues
+
+" >> motd
+
+cd /data/data/com.termux/files/home/T-banner2
+
+echo -e "
+
+Banner Defaul Finalizado
+
+"
+
+;;
+
+3)
+
+echo "
+
+Contacto directo A: Anonymous-Zpt
+
+"
+
+sleep 1
+
+termux-open https://wa.me/+573213474761
+
+echo
+
+;;
+
+4)
+
+echo "
+
+Iniciando Instalacion Necesaria
+
+"
+
+sleep 1
+
+pkg install python2 -y
+
+pkg install bash -y
+
+echo "instalacion  finalizada"
+
+clear
+
+echo -n "$APresiona Enter: "
+
+read -r
+
+source './start'
+
+;;
+
+5)
+
+echo "
+
+Gracias Por Utilizar Mi Script
+
+"
+
+sleep 2
+
+exit
+
+esac
+
+echo "chao"
