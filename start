@@ -420,8 +420,8 @@ echo -e "Comenzando Banner Defaul"
 sleep 2
 rm $PREFIX/etc/motd &>> /dev/null
 rm $PREFIX/etc/bash.bashrc &>> /dev/null
-cp ~/T-banner2/NET/.Banner/motd $PREFIX/etc
-cp ~/T-banner2/NET/.Banner/bash.bashrc $PREFIX/etc
+cp ~/T-banner2/NET/motd $PREFIX/etc
+cp ~/T-banner2/NET/bash.bashrc $PREFIX/etc
 sleep 0.5
 echo -e "$v"
 echo "Finalizado"|cowsay -db
