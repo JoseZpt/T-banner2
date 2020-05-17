@@ -25,4 +25,4 @@ Cuenta Con Dos Opciones:
 
 # screenshot
 
-![alt tag](https://raw.githubusercontent.com/Anonymous-Zpt/Archivos/master/IMG_20200517_140022.png?token=APCKNPTGUMJN5ZAKNCLPV5K6YGMY2)
+![muestra-De-Banner-2](https://github.com/Anonymous-Zpt/Archivos/blob/master/IMG_20200517_140022.png) 
