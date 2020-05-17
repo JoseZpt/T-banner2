@@ -1,5 +1,5 @@
 # T-banner2
-Es Un Pequeño Banner Que Se Ejecuta Con Python2
+Un Pequeño Banner Su Ejecucion Es Con Python2
 
 # Instalación 
 
