@@ -24,4 +24,4 @@ Cuenta Con Dos Opciones:
 2. Banner Defaul
 
 # screenshot
-https://raw.githubusercontent.com/Anonymous-Zpt/Archivos/master/IMG_20200517_140022.png
+https://raw.githubusercontent.com/Anonymous-Zpt/Archivos/master/IMG_20200517_140022.png?
