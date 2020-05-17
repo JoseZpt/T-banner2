@@ -24,3 +24,4 @@ Cuenta Con Dos Opciones:
 2. Banner Defaul
 
 # screenshot
+https://github.com/Anonymous-Zpt/Archivos/blob/master/IMG_20200517_140022.png
