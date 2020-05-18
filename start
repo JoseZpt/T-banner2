@@ -412,8 +412,12 @@ echo -e "$v"
 echo "Finalizado"|cowsay -d
 echo -e "$b"
 sleep 2
-banner
-inicio
+echo
+sleep 1
+echo
+sleep 0.5
+echo
+exit 
 ;;
 02|2)
 echo -e "Comenzando Banner Defaul"
@@ -427,8 +431,12 @@ echo -e "$v"
 echo "Finalizado"|cowsay -db
 echo -e "$b"
 sleep 2
-banner
-inicio
+echo
+sleep 1
+echo
+sleep 0.5
+echo
+exit 
 ;;
 03|3)
 adios
