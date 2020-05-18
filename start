@@ -403,7 +403,7 @@ echo '		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"' >
 echo "	}" >> $PREFIX/etc/bash.bashrc
 echo "fi" >> $PREFIX/etc/bash.bashrc
 echo "#" >> $PREFIX/etc/bash.bashrc
-echo "python2 ~/T-banner2/NET/.Banner" >> $PREFIX/etc/bash.bashrc
+echo "python ~/T-banner2/NET/.Banner" >> $PREFIX/etc/bash.bashrc
 echo "#By Anonymous Zpt" >> $PREFIX/etc/bash.bashrc
 echo "PS1='\$ '" >> $PREFIX/etc/bash.bashrc
 clear
