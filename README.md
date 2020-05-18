@@ -1,5 +1,5 @@
 # T-banner2
-Un Pequeño Banner Con Python2
+Un Pequeño Banner Con Python
 
 # Instalación 
 
