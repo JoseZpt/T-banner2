@@ -1,28 +1,23 @@
 # T-banner2
-Un Pequeño Banner Con Python
 
-# Instalación 
+![](https://raw.githubusercontent.com/JoseZpt/T-banner2/master/data/image_T-banner2.jpg)
+<div align="center">
+<a href="#"><img title="Version" src="https://img.shields.io/badge/Version-2.0-green.svg?style=flat-square"></a>
+<a href="https://github.com/JoseZpt/T-banner2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/JoseZpt/T-banner2?color=red&style=flat-square"></a>
+<a href="https://github.com/JoseZpt/T-banner2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/JoseZpt/T-banner2?color=red&style=flat-square"></a>
+<a href="https://github.com/JoseZpt/T-banner2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/JoseZpt/T-banner2?label=Watchers&color=blue&style=flat-square"></a>
+</div>
 
-$ pkg install python2 -y
+T-banner2 es una herramienta para personalizar la interfaz de termux
 
-$ pkg install cowsay -y
-
-$ pkg install git -y
-
-$ git clone https://github.com/Anonymous-Zpt/T-banner2
-
-$ cd T-banner2 
-
-$ chmod +x *
-
-$ ./start
-
-Cuenta Con Dos Opciones:
-
-1. Banner Personalizado
-
-2. Banner Defaul
-
-# screenshot
-
-![muestra-De-Banner-2](https://github.com/Anonymous-Zpt/Archivos/blob/master/IMG_20200517_140022.png) 
+# Instalacion 
+```
+apt update && apt upgrade -y
+pkg install git -y
+pkg install python2 -y
+git clone https://github.com/JoseZpt/T-banner2
+cd T-banner2
+chmod +x *
+```
+# Ejecutar
+* bash start 
