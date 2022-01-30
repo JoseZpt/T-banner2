@@ -1,454 +1,125 @@
 #!/bin/bash
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-A='\e[1;34m'
-r='\e[1;31m'
-v='\e[1;32m'
-f='\e[1;35m'
-b='\e[1;37m'
-ac='\e[1;36m'
-if [ ! -e /data/data/com.termux/files/usr/bin/cowsay ]; then
-sleep 0.4
-echo
-echo -e "$A[$r*$A]${r}Error Falta Cowsay${b}"
-echo
-echo -e "$v pkg install cowsay$b"
-echo
-exit
-fi
-if [ ! -e /data/data/com.termux/files/usr/bin/python2 ]; then
-sleep 0.4
-echo
-echo -e "$A[$r*$A]${r}Error Falta Python2${b}"
-echo
-echo -e "$v pkg install python2 -y $b"
-echo
-exit
-fi
-trap adios INT
-adios() {
-sleep 0.1
-echo
-echo -e "
-        $A[$v+$A]$ac Finalizado
-        $A[$v+$A]$ac Gracias Por Utilizar Mi  Script
-        $A[$v+$A]$ac By: Anonymous Zpt$b
-
-
-"
-sleep 0.3
+g="${b}\033[1;30m"
+b="\033[0m"
+b1="$b\033[1;37m"
+r="${b}\033[1;31m"
+r1="${b}\033[31m"
+A="${b}\033[1;34m"
+A1="${b}\033[34m"
+ac="${b}\e[1;36m"
+ac1="${b}\e[36m"
+v="${b}\033[1;32m"
+v1="${b}\033[32m"
+m="$b\033[1;35m"
+m1="$b\033[35m"
+a="$b\033[1;33m"
+a1="$b\033[33m"
+cy="$b\033[38;2;23;147;209m"
+data="$(pwd)/data"
+trap finished INT
+finished() {
+    sleep 0.2
+    printf "\n\n"
+    printf "${v1}[${b}+${v1}]${b} Finished\n"
+    printf "${v1}[${b}+${v1}]${b} Created by Jose Zpt\n"
+    printf "${v1}[${b}+${v1}]${b} Gracias por utilizar mi herramienta\n"
+    printf "${v1}[${b}+${v1}]${b} servicio de ayuda https://t.me/JoseZpt$b\n"
+    printf "\n"
 exit
 }
-b() {
-sleep 0.5
-echo -e "$A
-▄▄▄▄▄▄
- ██▀▀▀▀██
- ██    ██   ▄█████▄  ██▄████▄  ██▄████▄   ▄████▄    ██▄████
- ███████    ▀ ▄▄▄██  ██▀   ██  ██▀   ██  ██▄▄▄▄██   ██▀
- ██    ██  ▄██▀▀▀██  ██    ██  ██    ██  ██▀▀▀▀▀▀   ██
- ██▄▄▄▄██  ██▄▄▄███  ██    ██  ██    ██  ▀██▄▄▄▄█   ██
- ▀▀▀▀▀▀▀    ▀▀▀▀ ▀▀  ▀▀    ▀▀  ▀▀    ▀▀    ▀▀▀▀▀    ▀▀
-$b"
+if [[ "$(pwd)" == "${HOME}/T-banner"  ]]; then
+	ruta="${HOME}/T-banner"
+else
+	ruta="$(pwd)"
+fi
+if [[ -e ${data} && -e "${data}/banner.py" && -e "${data}/fecha.sh" && -e "${data}/motd" && -e "${data}/bash.bashrc" ]]; then
+	true
+else
+	echo "\n${b}[${r1}*${b}] Error, reinstalando herramienta...\n"
+	cd ${ruta}/..
+	rm -rf T-banner2
+	git clone https://github.com/JoseZpt/T-banner2
+        if [[ ! -e "T-banner2" ]]; then
+		echo -e "\n${b}[${r1}*${b}] Revisa tu conexion a internet\n"
+		exit
+	else
+		cd T-banner2
+		bash start
+	fi
+fi
+command -v python2 > /dev/null 2>&1 || { sleep 0.5; echo >&2 -e "\n$v1[$b1*$v1]$b Instalando python2..."; pkg install python2 -y &>> /dev/null;sleep 0.5;}
+T-banner2() {
+clear
+echo -e "${v1}"
+echo -e " _______         _______  _______  __    _  __    _  _______  ______ "
+echo -e "|       |       |  _    ||   _   ||  |  | ||  |  | ||       ||    _ |"
+echo -e "|_     _| ____  | |_|   ||  |_|  ||   |_| ||   |_| ||    ___||   | ||"
+echo -e "  |   |  |____| |       ||       ||       ||       ||   |___ |   |_||_ "
+echo -e "  |   |         |  _   | |       ||  _    ||  _    ||    ___||    __  |"
+echo -e "  |   |         | |_|   ||   _   || | |   || | |   ||   |___ |   |  | |"
+echo -e "  |___|         |_______||__| |__||_|  |__||_|  |__||_______||___|  |_|"
+echo -e "${b}"
+sleep 0.0
+}
+start() {
+T-banner2
+echo -e "${b}[${v1}+${b}]${r1} Iniciando${b} banner personalizado"
+sleep 5
+rm -rf $PREFIX/etc/bash.bashrc
+cp ${ruta}/data/bash.bashrc $PREFIX/etc
+rm -rf $PREFIX/etc/motd
+echo "python2 ${ruta}/data/banner.py" >> $PREFIX/etc/bash.bashrc
+sed -i '/ruta = */d' ${ruta}/data/banner.py
+sed -i "/os.system('sh ' */d" ${ruta}/data/banner.py
+echo "ruta = '"${ruta}"/data'" >> ${ruta}/data/banner.py
+echo "os.system('sh ' + ruta + '/fecha.sh')" >> ${ruta}/data/banner.py
+clear
+python2 ${ruta}/data/banner.py
+}
+delete() {
+T-banner2
+echo -e "${b}[${v1}+${b}]${r1} Eliminando${b} banner personalizado"
+sleep 5
+rm -rf $PREFIX/etc/motd
+cp ${ruta}/data/motd $PREFIX/etc
+sed -i '/python2 */d' $PREFIX/etc/bash.bashrc
+clear
+cat ${ruta}/data/motd
 }
 banner() {
-clear
-b
-echo "¿Que Deseas Realizar?"
-echo -e "
-	$A[${r}01$A]$v Iniciar Personalizacion
-
-	$A[${r}02$A]$v Eliminar Personalizacion
-
-	$A[${r}03$A]$v Salir
-"
-inicio
+T-banner2
+echo -e "${v1} Menu de ayuda"
+printf "\n"
+printf "${A1} [${b}01${A1}]${b} Configurar banner\n"
+printf "\n"
+printf "${A1} [${b}02${A1}]${b} Eliminar banner\n"
+printf "\n"
+printf "${A1} [${b}03${A1}]${b} Contacto${cy}(Telegram)\n"
+printf "\n"
+printf "${A1} [${b}04${A1}]${b} Salir\n"
+printf "\n"
 }
 inicio() {
-printf  "$v¦-->$b "
+printf "${v1}[${b}++${v1}]${v} T-banner2${b}: "
 read opcion
 case $opcion in
 01|1)
-clear
-echo -e "Iniciando Banner Personalizado"
-sleep 2
-rm $PREFIX/etc/motd &>> /dev/null
-rm $PREFIX/etc/bash.bashrc &>> /dev/null
-touch $PREFIX/etc/bash.bashrc
-echo "if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then" >> $PREFIX/etc/bash.bashrc
-echo "	command_not_found_handle() {" >> $PREFIX/etc/bash.bashrc
-echo '		/data/data/com.termux/files/usr/libexec/termux/command-not-found "$1"' >> $PREFIX/etc/bash.bashrc
-echo "	}" >> $PREFIX/etc/bash.bashrc
-echo "fi" >> $PREFIX/etc/bash.bashrc
-echo "#" >> $PREFIX/etc/bash.bashrc
-echo "python ~/T-banner2/NET/.Banner" >> $PREFIX/etc/bash.bashrc
-echo "#By Anonymous Zpt" >> $PREFIX/etc/bash.bashrc
-echo "PS1='\$ '" >> $PREFIX/etc/bash.bashrc
-clear
-sleep 0.5
-echo -e "$v"
-echo "Finalizado"|cowsay -d
-echo -e "$b"
-sleep 2
-echo
-sleep 1
-echo
-sleep 0.5
-echo
-exit 
+start
 ;;
 02|2)
-echo -e "Comenzando Banner Defaul"
-sleep 2
-rm $PREFIX/etc/motd &>> /dev/null
-rm $PREFIX/etc/bash.bashrc &>> /dev/null
-cp ~/T-banner2/NET/motd $PREFIX/etc
-cp ~/T-banner2/NET/bash.bashrc $PREFIX/etc
-sleep 0.5
-echo -e "$v"
-echo "Finalizado"|cowsay -db
-echo -e "$b"
-sleep 2
-echo
-sleep 1
-echo
-sleep 0.5
-echo
-exit 
+delete
 ;;
 03|3)
-adios
+am start -a android.intent.action.VIEW https://t.me/JoseZpt &>> /dev/null
+echo -e "\n${b}[${v1}++${b}] Hecho\n"
 ;;
-Clear|clear)
-banner
-inicio
+04|4)
+finished
 ;;
 *)
-echo -e "$A[$b*$A]$b Comando Invalido"
+echo -e "${v1}Comando: '"${r1}${opcion}${v1}"' invalido."
+echo ""
 inicio
-;;
 esac
 }
 banner
